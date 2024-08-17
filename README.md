@@ -15,6 +15,7 @@
 # Example
 
 >%% add main directory
+
 >clear all; close all;clc;
 >selpath = uigetdir('','Add path');
 >addpath(genpath(selpath))
