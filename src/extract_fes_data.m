@@ -38,7 +38,6 @@ for m=1:6
     writematrix(A,filename);
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     figure
-    subplot 121
     geobasemap ('streets')
     s=geoscatter(LAT(nonans),LON(nonans),10,amp(nonans),'filled');
     datatipRow = dataTipTextRow('Amplitude',amp(nonans));
@@ -47,7 +46,7 @@ for m=1:6
     c = colorbar;
     tmp=sprintf('%s amplitude [m]',name{m});
     title(tmp);
-    subplot 121
+    figure
     geobasemap ('streets')
     s=geoscatter(LAT(nonans),LON(nonans),10,pha(nonans),'filled');
     datatipRow = dataTipTextRow('Phase',pha(nonans));
