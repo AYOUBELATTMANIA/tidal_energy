@@ -9,9 +9,8 @@ global lon_min lon_max lat_min lat_max
 name={'K1';'K2';'M2';'N2';'O1';'S2'};
 freq=[0.041780746 0.083561492 0.080511401 0.078999249 0.038730654 0.083333333];
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-dir = uigetdir('','Add path');
-cd (dir);
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    dir = uigetdir('','Add path');
+    cd (dir);
 for m=1:6
     fes=matfile.fes2014(1,m);           
     lon=fes.longitude; lat=fes.latitude;
@@ -45,7 +44,7 @@ for m=1:6
     s.DataTipTemplate.DataTipRows(end+1) = datatipRow;
     colormap turbo
     c = colorbar;
-    tmp=sprintf('%s amplitude [cm]',name{m});
+    tmp=sprintf('%s amplitude [m]',name{m});
     title(tmp);
     figure
     geobasemap ('streets')

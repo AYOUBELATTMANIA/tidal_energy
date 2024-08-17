@@ -46,5 +46,7 @@ E=E_annual.*0.001;
 lon=longitude; lat=latitude;
 A=[longitude latitude E_annual.*0.001];
 filename=sprintf('annual_energy.txt');
+dir = uigetdir('','Add path');
+cd (dir);
 writematrix(A,filename);
 end
