@@ -36,4 +36,24 @@ for m=1:6
     A=[LAT(nonans) LON(nonans) amp(nonans) pha(nonans) FREQ];
     filename=sprintf('fes_onde_%s.txt',name{m});
     writematrix(A,filename);
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    figure
+    subplot 121
+    geobasemap ('streets')
+    s=geoscatter(LAT(nonans),LON(nonans),10,amp(nonans),'filled');
+    datatipRow = dataTipTextRow('Amplitude',amp(nonans));
+    s.DataTipTemplate.DataTipRows(end+1) = datatipRow;
+    colormap turbo
+    c = colorbar;
+    tmp=sprintf('%s amplitude [m]',name{m});
+    title(tmp);
+    subplot 121
+    geobasemap ('streets')
+    s=geoscatter(LAT(nonans),LON(nonans),10,pha(nonans),'filled');
+    datatipRow = dataTipTextRow('Phase',pha(nonans));
+    s.DataTipTemplate.DataTipRows(end+1) = datatipRow;
+    colormap turbo
+    c = colorbar;
+    tmp=sprintf('%s phase [°]',name{m});
+    title(tmp);
 end
