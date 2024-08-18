@@ -19,7 +19,7 @@ date_end=datenum(date2,'dd-mmm-yyyy');
 time=10;tmp=time/(60*24); x=date_start:tmp:date_end; lat=A(i,1);
 H_level=t_predic(x,M,'latitude',lat,'synthesis',0);%%% 0 synthesis
 H_level=H_level+10; %% eviter valeur negative
-%%%%%%  Calcul of tidal amplitude
+%%%%%%  Computing tidal range
 [pk1,lk1] = findpeaks(H_level,x,'MinPeakDistance',6/24);
 [pk2,lk2] = findpeaks(-H_level,x,'MinPeakDistance',6/24);
 t_sort=sort([lk2';lk1']);l_sort=zeros(length(t_sort),1);
